@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://vuejs.org/images/icons/favicon-16x16.png"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>GYM APP VUE</title>
+  </head>
+  <body>
+    <div class="container mt-5" id="app">
+      <h3>
+        <img src="https://vuejs.org/images/icons/apple-icon-57x57.png" alt="" />
+        {{ title }}
+      </h3>
+
+      <input
+        type="text"
+        class="form-control"
+        v-model="newActivity"
+        v-on:keyup.enter="addActivity"
+      />
+
+      <button class="btn btn-primary my-3" @click="addActivity">Save</button>
+      <div v-for="(item,index) of activity">
+        <div
+          role="alert"
+          :class="['alert',item.status? 'alert-success' : 'alert-danger']"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <!-- Text -->
+              <i class="material-icons float-left mr-2">accessibility</i>
+              <b>{{ item.name }}</b> -
+              {{ item.status ? "Finished" : "Unfinished" }}
+            </div>
+            <div>
+              <!-- buttons -->
+              <span @click="editActivty(index)">
+                <i class="material-icons">done</i>
+              </span>
+              <span @click="deleteActivity(index)">
+                <i class="material-icons">delete</i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
