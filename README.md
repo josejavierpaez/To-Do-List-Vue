@@ -4,7 +4,7 @@ This is **to-do-List** with Vue ![](https://vuejs.org/images/icons/favicon-16x16
 
 # Application Link
 
-if you want look the app press here [App Link](https://josejavierpaez.github.io/To-Do-List-Vue/App/index.html)
+if you want look the app press here [App Link](https://josejavierpaez.github.io/To-Do-List-Vue/App/index)
 
 # how does this work?
 
